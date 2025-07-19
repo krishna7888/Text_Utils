@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Body background */
+#bdy {
+  background-image: url("img1.jpg");
+  background-size: cover; /* Automatically adjust to screen */
+  background-repeat: no-repeat;
+  background-position: center;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
 }
-
-.App-link {
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;  /* Black nav background */
+  padding: 1rem 2rem;
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.logo {
+  font-size: 1.5rem;
+  color: #61dafb;
+}
+
+.navul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;  /* space between items */
+  margin: 0;
+  padding: 0;
+}
+
+.navul li {
+  color: aqua;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navul li:hover {
+  color: #61dafb;  /* Change color on hover */
+  text-decoration: underline;
+}
+
+/* Text box section */
+#text {
+  height: auto;
+  max-width: 90%;
+  margin: 2rem auto;
+  padding: 1rem;
+  color: white;
+  border: 2px solid black;
+  background-color: transparent;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+/* Responsive typography & spacing */
+@media (max-width: 768px) {
+  .navul {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navul li {
+    margin-right: 0;
+  }
+
+  #text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #text {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .nav {
+    padding: 0.5rem;
+  }
+
+  .navul {
+    gap: 1rem;
+  }
+}
+
+
+/* css for button */
+/* Button group for spacing */
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Space between buttons */
+}
+
+/* Common button styling */
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.03);
+}
+
+/* Optional: responsive stack */
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: stretch;
   }
 }
